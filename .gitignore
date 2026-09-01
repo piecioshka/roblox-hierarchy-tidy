@@ -1,0 +1,21 @@
+# Environment variables
+.env*.local
+
+# Common ignores
+node_modules
+.next/
+.DS_Store
+
+# TypeScript
+next-env.d.ts
+*.tsbuildinfo
+
+# Rojo build output
+*.rbxmx
+
+# Static export
+out/
+
+# Session scratch files
+tmp/*
+!tmp/.gitkeep
