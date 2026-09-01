@@ -1,7 +1,17 @@
 # Hierarchy Tidy 🧹
 
+<!-- prettier-ignore-start -->
+
+[![github-ci](https://github.com/piecioshka/roblox-hierarchy-tidy/actions/workflows/ci.yml/badge.svg)](https://github.com/piecioshka/roblox-hierarchy-tidy/actions/workflows/ci.yml)
+[![deploy](https://github.com/piecioshka/roblox-hierarchy-tidy/actions/workflows/deploy.yml/badge.svg)](https://github.com/piecioshka/roblox-hierarchy-tidy/actions/workflows/deploy.yml)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://piecioshka.mit-license.org)
 ![luau](https://img.shields.io/badge/built%20with-Luau-00A2FF.svg)
 ![typescript](https://img.shields.io/badge/landing%20page-TypeScript-3178c6.svg)
+![roblox-studio](https://img.shields.io/badge/Roblox%20Studio-plugin-555.svg)
+
+<!-- prettier-ignore-end -->
+
+> Give a ⭐️ if this project helped you!
 
 A Roblox Studio plugin with a dockable panel for tidying up the Explorer hierarchy: bulk selection, grouping, name numbering and removing empty containers. Every operation goes through `ChangeHistoryService`, so a plain `Ctrl+Z` undoes it.
 
@@ -113,3 +123,7 @@ and pull request; a husky pre-commit hook formats and lints staged files.
 
 Pages serves the site from `/<repo>`, so the workflow builds with
 `NEXT_PUBLIC_BASE_PATH=/roblox-hierarchy-tidy`. Leave that variable unset locally.
+
+## License
+
+[The MIT License](https://piecioshka.mit-license.org) @ 2026
