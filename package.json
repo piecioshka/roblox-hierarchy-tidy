@@ -32,7 +32,7 @@
     "@types/react-dom": "^19.2.5",
     "detect-port": "^2.1.0",
     "eslint": "^9.39.5",
-    "eslint-config-prettier": "^9.1.2",
+    "eslint-config-prettier": "^10.1.8",
     "husky": "^9.1.7",
     "lint-staged": "^17.4.1",
     "postcss": "^8.5.26",
