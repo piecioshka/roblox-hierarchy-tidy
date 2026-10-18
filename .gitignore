@@ -17,5 +17,4 @@ next-env.d.ts
 out/
 
 # Session scratch files
-tmp/*
 tmp/
