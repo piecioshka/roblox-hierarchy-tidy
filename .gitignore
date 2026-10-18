@@ -18,4 +18,4 @@ out/
 
 # Session scratch files
 tmp/*
-!tmp/.gitkeep
+tmp/
