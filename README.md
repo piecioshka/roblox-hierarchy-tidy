@@ -51,24 +51,13 @@ The plugins folder is `~/Documents/Roblox/Plugins`. Same trick as above if it is
 
 On both systems, restart Studio after copying the file. A **Hierarchy Tidy** toolbar shows up with a button that toggles the panel.
 
-### Live sync while developing
-
-Instead of rebuilding by hand, serve the project and let Studio pull changes:
-
-```bash
-cd roblox/hierarchy-tidy
-rojo serve
-```
-
-Install the [Rojo](https://create.roblox.com/store/asset/13916111004) plugin in Studio and connect to the server. Edits to the `.luau` files land in Studio immediately, no restart needed.
-
 ### Without Rojo
 
 1. In Studio, create a `Script` in `ServerStorage` and paste in the contents of `src/init.server.luau`.
 2. Recreate the module tree as `ModuleScript` children of that script: `Theme`, `Widget`, `UiKit`, `Settings`, `History`, plus an `Actions` folder holding `Group`, `Rename`, `Cleanup` and `Find`.
 3. Right-click the script and pick **Save as Local Plugin**.
 
-This works, but you repeat the whole dance on every change — for longer sessions use the live sync above.
+This works, but you repeat the whole dance on every change — for longer sessions use the live sync with `rojo serve` described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Keyboard shortcuts
 
@@ -80,49 +69,9 @@ Three actions register under `File → Advanced → Customize Shortcuts` (unboun
 
 They act on the current Explorer selection and log the result to the Output window.
 
-## Plugin structure
+## Contributing
 
-```
-roblox/hierarchy-tidy/
-  default.project.json   Rojo configuration (src → Script "HierarchyTidy")
-  src/
-    init.server.luau     toolbar, DockWidgetPluginGui, PluginActions
-    Widget.luau          panel contents
-    UiKit.luau           controls (sections, buttons, inputs, cycle)
-    Theme.luau           colors from StudioTheme + reaction to theme changes
-    Settings.luau        persistent settings (plugin:Get/SetSetting)
-    History.luau         wrapper around ChangeHistoryService:TryBeginRecording
-    Actions/
-      Group.luau         grouping, splitting by class, flatten
-      Rename.luau        bulk name numbering
-      Cleanup.luau       empty containers, LayoutOrder, selection summary
-      Find.luau          search by name/class, duplicate names
-```
-
-The toolbar icon is empty — drop your own `rbxassetid://…` into `init.server.luau` if you want one.
-
-## Website
-
-The landing page in `app/` is a Next.js static export, deployed to GitHub Pages by
-[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) on every push to `main`. It needs
-Pages set to **GitHub Actions** in the repository settings, which requires a public repository on
-the free plan.
-
-```bash
-pnpm install
-pnpm dev            # http://localhost:3000, or the next free port
-pnpm build          # static export into out/ (includes the TypeScript check)
-pnpm start          # serve the export locally
-pnpm test           # unit tests (vitest)
-pnpm lint           # eslint
-pnpm format:check   # prettier
-```
-
-The same checks run in CI ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) on every push
-and pull request; a husky pre-commit hook formats and lints staged files.
-
-Pages serves the site from `/<repo>`, so the workflow builds with
-`NEXT_PUBLIC_BASE_PATH=/roblox-hierarchy-tidy`. Leave that variable unset locally.
+Building the plugin, live sync with Rojo, the module map and the landing page: see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
