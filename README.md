@@ -17,6 +17,10 @@ A Roblox Studio plugin with a dockable panel for tidying up the Explorer hierarc
 
 The plugin lives in [`roblox/hierarchy-tidy`](roblox/hierarchy-tidy) and is written in Luau (`--!strict`). The repository root additionally holds a Next.js landing page — the plugin does not need it to run.
 
+| Before                                                                                | After "Tidy up"                                                                      |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| ![Hierarchy Tidy - landing page with the Explorer demo](docs/screenshots/landing.png) | ![Hierarchy Tidy - Explorer demo after Tidy up](docs/screenshots/landing-tidied.png) |
+
 ## Features
 
 - 🔍 **Find and select** — filter by name fragment and by class (`BasePart`, `Script`, …) across `Workspace`, the current selection, `ServerScriptService` or `StarterGui`. A separate button selects siblings with colliding names. Capped at 500 hits per query.
